@@ -1,14 +1,19 @@
 package com.grupounibra.api;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-@restController
-@requestMapping("/")
-
+ @RestController
+ @RequestMapping
 public class Controlador {
     
-    @setMapping
+    @GetMapping("/")
+    public String getMethodName(@RequestParam String param) {
+        return new String();
+    }
+    
     public String olaMundo(){
         return "Ola mundo";
     }
