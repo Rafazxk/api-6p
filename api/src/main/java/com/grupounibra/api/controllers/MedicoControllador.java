@@ -8,8 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import lombok.RequiredArgsConstructor;
+
+import com.grupounibra.DTO.MedicoCadastroDTO;
 import com.grupounibra.DTO.MedicoDTO;
 import com.grupounibra.api.services.MedicoService;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 @RestController
@@ -23,5 +28,11 @@ public class MedicoControllador {
     public List<MedicoDTO> listarMedicos() {
         return medicoService.listarMedicos();
     }
+
+    @PostMapping
+    public MedicoDTO cadastrarMedico(@RequestBody MedicoCadastroDTO dto) {       
+        return medicoService.cadastrarMedico(dto);
+    }
+    
 
 }
